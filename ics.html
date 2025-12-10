@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="description" content="ICS - Instituto de Estudos da Consciência. Excelência em Ciências Humanas, Sociais e Tecnologia. Uma instituição filantrópica de prestígio.">
+    <meta name="author" content="ICS - Instituto de Estudos da Consciência">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#781419">
+    
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; img-src 'self' https: data:; style-src 'self' https: 'unsafe-inline'; script-src 'self' https: 'unsafe-inline';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <title>ICS | Instituto de Estudos da Consciência</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        harvard: {
+                            red: '#781419',     /* Extraído do Logo */
+                            dark: '#4a0b0e',
+                            light: '#9e2229'
+                        },
+                        royal: {
+                            gold: '#C89D35',    /* Extraído do Logo */
+                            light: '#e6c368'
+                        },
+                        paper: '#F9F7F2',       /* Off-white elegante */
+                        charcoal: '#1a1a1a'
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'elegant': '0 4px 20px -2px rgba(0, 0, 0, 0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Gradient Text */
+        .text-gold-gradient {
+            background: linear-gradient(to right, #C89D35, #e6c368, #C89D35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Instituto de Estudos da Consciência",
+      "alternateName": "ICS",
+      "url": "https://www.ics.org.br",
+      "logo": "logo-brasao.jpg",
+      "description": "Instituição de ensino e pesquisa em Ciências Humanas e Sociais com foco em tecnologia e filantropia.",
+      "department": [
+        {
+          "@type": "Organization",
+          "name": "IETBH - Instituto de Estudos e Terapias de Belo Horizonte"
+        },
+        {
+          "@type": "Organization",
+          "name": "IETESP - Instituto de Estudos Tecnológicos de São Paulo"
+        },
+        {
+            "@type": "Organization",
+            "name": "Instituto Pai Cipriano"
+        }
+      ],
+      "knowsAbout": ["Ciências Humanas", "Tecnologia", "Consciência", "Filantropia"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      }
+    }
+    </script>
+</head>
+<body class="bg-paper text-charcoal font-sans antialiased overflow-x-hidden selection:bg-harvard-red selection:text-white">
+
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <img class="h-12 w-auto" src="logo-brasao.jpg" alt="Brasão ICS" onerror="this.src='https://placehold.co/100x120/781419/C89D35?text=Brasão';">
+                    <div class="hidden md:block">
+                        <span class="block text-harvard-red font-serif font-bold text-lg leading-none tracking-wide">ICS</span>
+                        <span class="block text-gray-500 text-xs tracking-widest uppercase">Instituto de Estudos da Consciência</span>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-harvard-red px-3 py-2 text-sm font-medium transition-colors">Início</a>
+                    <a href="#about" class="text-gray-700 hover:text-harvard-red px-3 py-2 text-sm font-medium transition-colors">O Instituto</a>
+                    <a href="#group" class="text-gray-700 hover:text-harvard-red px-3 py-2 text-sm font-medium transition-colors">Grupo & Filiais</a>
+                    <a href="#academic" class="text-gray-700 hover:text-harvard-red px-3 py-2 text-sm font-medium transition-colors">Acadêmico</a>
+                    <a href="#philanthropy" class="text-gray-700 hover:text-harvard-red px-3 py-2 text-sm font-medium transition-colors">Filantropia</a>
+                </nav>
+
+                <div class="hidden md:flex">
+                    <a href="#contact" class="bg-harvard-red text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-harvard-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                        Portal do Aluno
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-700 hover:text-harvard-red focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block text-gray-700 hover:bg-gray-50 hover:text-harvard-red px-3 py-2 rounded-md text-base font-medium">Início</a>
+                <a href="#about" class="block text-gray-700 hover:bg-gray-50 hover:text-harvard-red px-3 py-2 rounded-md text-base font-medium">O Instituto</a>
+                <a href="#group" class="block text-gray-700 hover:bg-gray-50 hover:text-harvard-red px-3 py-2 rounded-md text-base font-medium">Grupo</a>
+                <a href="#contact" class="block text-harvard-red font-bold px-3 py-2 rounded-md text-base">Portal do Aluno</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                alt="Ambiente Acadêmico Clássico" 
+                class="w-full h-full object-cover"
+                loading="lazy"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-harvard-red/90 to-harvard-dark/80 mix-blend-multiply"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="animate-on-scroll fade-in-up">
+                <img src="logo-brasao.jpg" class="h-24 w-auto mx-auto mb-8 drop-shadow-2xl border-2 border-royal-gold/50 rounded-b-3xl p-1 bg-harvard-dark/30" alt="Brasão" onerror="this.style.display='none'">
+                
+                <h1 class="text-4xl md:text-6xl font-serif font-bold tracking-tight mb-6">
+                    A Elegância da <span class="text-royal-gold italic">Consciência</span> <br>
+                    Aliada à Potência da Ciência.
+                </h1>
+                
+                <p class="mt-4 text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto font-light">
+                    Uma organização de excelência em Ciências Humanas e Sociais. Unindo tradição filantrópica e inovação tecnológica.
+                </p>
+
+                <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#about" class="px-8 py-3 border border-royal-gold text-royal-gold hover:bg-royal-gold hover:text-harvard-dark rounded transition-all font-semibold uppercase tracking-wider text-sm">
+                        Conheça o Instituto
+                    </a>
+                    <a href="#courses" class="px-8 py-3 bg-white text-harvard-red hover:bg-gray-100 rounded transition-all font-semibold uppercase tracking-wider text-sm shadow-lg">
+                        Nossos Cursos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-paper">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="animate-on-scroll fade-in-up">
+                    <h2 class="text-harvard-red font-bold text-sm uppercase tracking-widest mb-2">Sobre Nós</h2>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-6">Tradição Acadêmica & <br>Vanguarda Tecnológica</h3>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed text-justify">
+                        O <strong>ICS - Instituto de Estudos da Consciência</strong> é uma organização privada de caráter filantrópico que se dedica ao ensino e pesquisa nas áreas de Ciências Humanas e Sociais. Inspirados pelos princípios de excelência, elegância e prestreza das grandes universidades mundiais, como Harvard, aplicamos o rigor científico ao estudo da subjetividade humana.
+                    </p>
+                    
+                    <p class="text-gray-600 mb-6 leading-relaxed text-justify">
+                        Operamos na intersecção entre a sabedoria ancestral e a tecnologia moderna. Nossa metodologia é "Tech-Enabled", garantindo que o conhecimento humano seja acessível, escalável e prático.
+                    </p>
+
+                    <ul class="space-y-4 mt-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-royal-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Abordagem científica prática para Humanidades.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-royal-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Compromisso inabalável com a Filantropia.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-royal-gold mt-1 mr-3"></i>
+                            <span class="text-gray-700">Parte de um ecossistema integrado (IETBH, IETESP).</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="relative animate-on-scroll fade-in-up delay-200">
+                    <div class="absolute -inset-4 bg-royal-gold/20 rounded-lg transform rotate-3"></div>
+                    <img 
+                        src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                        alt="Estudantes em ambiente moderno" 
+                        class="relative rounded-lg shadow-elegant w-full h-auto object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        loading="lazy"
+                    >
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded shadow-xl border-t-4 border-harvard-red max-w-xs">
+                        <p class="font-serif text-harvard-red text-4xl font-bold">100%</p>
+                        <p class="text-gray-500 text-sm uppercase tracking-wide mt-1">Compromisso com o saber</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="group" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 animate-on-scroll fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-gray-900">Nosso Ecossistema</h2>
+                <div class="w-24 h-1 bg-royal-gold mx-auto mt-4 mb-6"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto">
+                    O ICS faz parte de um grupo robusto de organizações dedicadas ao desenvolvimento humano integral.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="group bg-paper p-8 rounded-xl hover:shadow-elegant transition-all duration-300 border border-transparent hover:border-royal-gold/30 animate-on-scroll fade-in-up">
+                    <div class="h-12 w-12 bg-harvard-red/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-harvard-red transition-colors">
+                        <i class="fas fa-brain text-harvard-red group-hover:text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">IETBH</h3>
+                    <p class="text-sm text-royal-gold font-bold uppercase mb-4">Belo Horizonte</p>
+                    <p class="text-gray-600 text-sm">
+                        Instituto de Estudos e Terapias. Foco na aplicação clínica e terapêutica das ciências da consciência.
+                    </p>
+                </div>
+
+                <div class="group bg-paper p-8 rounded-xl hover:shadow-elegant transition-all duration-300 border border-transparent hover:border-royal-gold/30 animate-on-scroll fade-in-up delay-100">
+                    <div class="h-12 w-12 bg-harvard-red/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-harvard-red transition-colors">
+                        <i class="fas fa-microchip text-harvard-red group-hover:text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">IETESP</h3>
+                    <p class="text-sm text-royal-gold font-bold uppercase mb-4">São Paulo</p>
+                    <p class="text-gray-600 text-sm">
+                        Instituto de Estudos Tecnológicos. O braço de inovação hard-tech e desenvolvimento de sistemas.
+                    </p>
+                </div>
+
+                <div class="group bg-paper p-8 rounded-xl hover:shadow-elegant transition-all duration-300 border border-transparent hover:border-royal-gold/30 animate-on-scroll fade-in-up delay-200">
+                    <div class="h-12 w-12 bg-harvard-red/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-harvard-red transition-colors">
+                        <i class="fas fa-hands-holding-heart text-harvard-red group-hover:text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Instituto Pai Cipriano</h3>
+                    <p class="text-sm text-royal-gold font-bold uppercase mb-4">Filantropia & Raízes</p>
+                    <p class="text-gray-600 text-sm">
+                        A base espiritual e de assistência social, focada em acolhimento e resgate cultural.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="philanthropy" class="relative py-24 bg-harvard-red text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <i class="fas fa-university text-9xl absolute -right-20 -bottom-20 transform -rotate-12"></i>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="animate-on-scroll fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6">Filantropia como Pilar Central</h2>
+                    <p class="text-gray-200 text-lg leading-relaxed mb-8">
+                        Acreditamos que o conhecimento só é válido quando compartilhado. O ICS destina uma parte significativa de seus recursos e vagas para bolsas de estudo integrais e projetos comunitários.
+                    </p>
+                    <a href="#" class="inline-flex items-center text-royal-gold font-semibold hover:text-white transition-colors">
+                        Conheça nossos projetos sociais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="bg-harvard-dark/50 p-6 rounded-lg backdrop-blur-sm border border-white/10 text-center">
+                        <span class="block text-4xl font-bold text-royal-gold mb-2">+50</span>
+                        <span class="text-sm text-gray-300">Cursos Ministrados</span>
+                    </div>
+                    <div class="bg-harvard-dark/50 p-6 rounded-lg backdrop-blur-sm border border-white/10 text-center">
+                        <span class="block text-4xl font-bold text-royal-gold mb-2">100%</span>
+                        <span class="text-sm text-gray-300">Foco Humanitário</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-paper">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-serif font-bold text-gray-900">Nossa Estrutura e Vivência</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[200px]">
+                <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Auditório" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-serif italic text-xl">Auditórios</span>
+                    </div>
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Reunião" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                </div>
+                <div class="relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tecnologia" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                </div>
+                <div class="md:col-span-2 relative group overflow-hidden rounded-lg cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Grupo" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-harvard-dark text-white pt-16 pb-8 border-t-4 border-royal-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="logo-brasao.jpg" alt="Logo ICS" class="h-16 w-auto brightness-0 invert opacity-90" onerror="this.style.display='none'">
+                        <div>
+                            <h3 class="font-serif font-bold text-xl">ICS</h3>
+                            <p class="text-xs text-gray-400 uppercase tracking-widest">Instituto de Estudos<br>da Consciência</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Unindo ciência, tecnologia e humanidade para expandir a consciência e transformar a sociedade.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-royal-gold font-bold uppercase tracking-wider text-sm mb-4">Institucional</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-white transition-colors">Sobre o ICS</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Corpo Docente</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Política de Privacidade</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Transparência</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-royal-gold font-bold uppercase tracking-wider text-sm mb-4">Contato</h4>
+                    <ul class="space-y-3 text-sm text-gray-300">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-royal-gold"></i>
+                            <span>Sede Administrativa<br>Belo Horizonte, MG</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-royal-gold"></i>
+                            <span>contato@ics.org.br</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-royal-gold"></i>
+                            <span>(31) 3000-0000</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-royal-gold font-bold uppercase tracking-wider text-sm mb-4">Mantenha-se Atualizado</h4>
+                    <form class="flex flex-col gap-2">
+                        <input type="email" placeholder="Seu e-mail corporativo" class="bg-white/10 border border-white/20 text-white px-4 py-2 rounded focus:outline-none focus:border-royal-gold text-sm placeholder-gray-500">
+                        <button class="bg-royal-gold text-harvard-dark font-bold py-2 rounded hover:bg-white transition-colors text-sm">Inscrever-se</button>
+                    </form>
+                </div>
+            </div>
+
+            <hr class="border-white/10 mb-8">
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; 2024 ICS - Instituto de Estudos da Consciência. Todos os direitos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-royal-gold transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="hover:text-royal-gold transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="hover:text-royal-gold transition-colors"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md', 'bg-white/95');
+                navbar.classList.remove('py-2');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Intersection Observer for Animations (Lazy Load Animation)
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); // Only animate once
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
