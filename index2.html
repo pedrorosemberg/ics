@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <meta name="description" content="IEC - Instituto de Estudos da Consciência. Excelência em Parapsicologia, Física Quântica e Teologia Universalista. Uma instituição de vanguarda no ensino superior.">
+    <meta name="author" content="IEC - Metadax">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#781419">
+    
+    <meta property="og:title" content="IEC | Instituto de Estudos da Consciência">
+    <meta property="og:description" content="A convergência entre a Ciência Acadêmica e a Espiritualidade Universalista.">
+    <meta property="og:url" content="https://iec.metadax.com.br">
+    
+    <title>IEC | Instituto de Estudos da Consciência</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        harvard: {
+                            red: '#781419',     
+                            dark: '#4a0b0e',
+                            light: '#9e2229'
+                        },
+                        royal: {
+                            gold: '#C89D35',    
+                            light: '#e6c368'
+                        },
+                        paper: '#F9F7F2',       
+                        charcoal: '#1a1a1a',
+                        science: '#0f172a'
+                    },
+                    fontFamily: {
+                        serif: ['Merriweather', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'elegant': '0 4px 20px -2px rgba(0, 0, 0, 0.1)',
+                        'gold': '0 4px 20px -2px rgba(200, 157, 53, 0.2)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .text-gold-gradient {
+            background: linear-gradient(to right, #C89D35, #ffeebb, #C89D35);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: shine 4s linear infinite;
+        }
+
+        @keyframes shine {
+            to { background-position: 200% center; }
+        }
+    </style>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "Instituto de Estudos da Consciência",
+      "alternateName": "IEC Metadax",
+      "url": "https://iec.metadax.com.br",
+      "logo": "/assets/images/Group 1794.png",
+      "description": "Instituição dedicada ao estudo científico da espiritualidade, bioenergia e consciência humana sob a ótica da física moderna.",
+      "department": [
+        { "@type": "Organization", "name": "IETBH - Núcleo de Pesquisa Clínica" },
+        { "@type": "Organization", "name": "Metadax - Laboratório de Tecnologia Consciencial" }
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Belo Horizonte",
+        "addressRegion": "MG",
+        "addressCountry": "BR"
+      }
+    }
+    </script>
+</head>
+<body class="bg-paper text-charcoal font-sans antialiased overflow-x-hidden selection:bg-harvard-red selection:text-white">
+
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <div class="flex-shrink-0 flex items-center gap-4">
+                    <img class="h-14 w-auto drop-shadow-md" src="/assets/images/Group 1794.png" alt="Brasão IEC" onerror="this.src='https://placehold.co/100x120/781419/C89D35?text=Brasão';">
+                    <div class="hidden lg:block border-l-2 border-royal-gold pl-4">
+                        <span class="block text-harvard-red font-serif font-bold text-xl leading-none tracking-wide">IEC</span>
+                        <span class="block text-gray-600 text-[0.65rem] tracking-[0.2em] uppercase mt-1 font-semibold">Instituto de Estudos da Consciência</span>
+                    </div>
+                </div>
+
+                <nav class="hidden md:flex space-x-10">
+                    <a href="#home" class="text-gray-800 hover:text-harvard-red font-serif italic text-base transition-colors">Início</a>
+                    <a href="#research" class="text-gray-800 hover:text-harvard-red font-serif italic text-base transition-colors">Investigação Científica</a>
+                    <a href="#ecosystem" class="text-gray-800 hover:text-harvard-red font-serif italic text-base transition-colors">Ecossistema Metadax</a>
+                    <a href="#academic" class="text-gray-800 hover:text-harvard-red font-serif italic text-base transition-colors">Acadêmico</a>
+                </nav>
+
+                <div class="hidden md:flex">
+                    <a href="https://tetss.home.blog/" target="_blank" class="bg-harvard-red text-white px-8 py-3 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-harvard-dark transition-all shadow-elegant hover:shadow-gold transform hover:-translate-y-0.5 border border-harvard-red">
+                        Área do Pesquisador
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-harvard-red hover:text-harvard-dark focus:outline-none p-2">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-paper border-t border-royal-gold/30 absolute w-full shadow-xl">
+            <div class="px-4 pt-4 pb-6 space-y-2">
+                <a href="#home" class="block text-gray-800 hover:bg-harvard-red/5 hover:text-harvard-red px-3 py-3 rounded-md text-base font-serif">Início</a>
+                <a href="#research" class="block text-gray-800 hover:bg-harvard-red/5 hover:text-harvard-red px-3 py-3 rounded-md text-base font-serif">Investigação</a>
+                <a href="#ecosystem" class="block text-gray-800 hover:bg-harvard-red/5 hover:text-harvard-red px-3 py-3 rounded-md text-base font-serif">Ecossistema</a>
+                <a href="https://tetss.home.blog/" class="block text-harvard-red font-bold px-3 py-3 border-l-4 border-harvard-red bg-harvard-red/5 mt-4">Acesso ao Portal</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="relative pt-32 pb-24 lg:pt-56 lg:pb-40 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                alt="Pesquisa e Desenvolvimento Humano" 
+                class="w-full h-full object-cover brightness-[0.3]"
+            >
+            <div class="absolute inset-0 bg-gradient-to-t from-harvard-dark via-harvard-red/40 to-transparent mix-blend-multiply"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+            <div class="animate-on-scroll fade-in-up">
+                <div class="inline-block mb-6 px-4 py-1 border border-royal-gold/50 rounded-full bg-black/30 backdrop-blur-sm">
+                    <span class="text-royal-gold text-xs font-bold tracking-[0.2em] uppercase">Mecânica Quântica • Teologia • Neurociência</span>
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold tracking-tight mb-8 leading-tight">
+                    A Ciência da <span class="text-gold-gradient italic">Espiritualidade</span> <br>
+                    no Século XXI.
+                </h1>
+                
+                <p class="mt-4 text-xl md:text-2xl text-gray-200 max-w-4xl mx-auto font-light leading-relaxed">
+                    O <strong>IEC</strong> aplica o rigor metodológico ao estudo dos fenômenos imponderáveis. Unificamos o Espiritualismo Universalista com a Física Moderna para decodificar a anatomia sutil do ser humano.
+                </p>
+
+                <div class="mt-12 flex flex-col sm:flex-row justify-center gap-6">
+                    <a href="#research" class="px-10 py-4 bg-royal-gold text-harvard-dark hover:bg-white hover:text-harvard-red rounded-sm transition-all font-bold uppercase tracking-widest text-xs shadow-lg hover:shadow-gold">
+                        Nossa Metodologia
+                    </a>
+                    <a href="https://tetss.home.blog/" class="px-10 py-4 border border-white/30 bg-white/5 backdrop-blur-sm text-white hover:bg-white hover:text-harvard-red rounded-sm transition-all font-bold uppercase tracking-widest text-xs">
+                        Templo Escola (TETSS)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="research" class="py-24 bg-paper relative">
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gray-100/50 skew-x-12 hidden lg:block"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="animate-on-scroll fade-in-up">
+                    <h2 class="text-harvard-red font-bold text-xs uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+                        <span class="w-8 h-[2px] bg-royal-gold"></span> Fundamentação Teórica
+                    </h2>
+                    <h3 class="text-3xl md:text-4xl font-serif font-bold text-gray-900 mb-8 leading-snug">
+                        Do Fluido Cósmico ao <br>Condensado de Bose-Einstein
+                    </h3>
+                    
+                    <div class="prose prose-lg text-gray-600 text-justify">
+                        <p class="mb-6">
+                            Ao contrário das abordagens dogmáticas tradicionais, o IEC investiga a <strong>espiritualidade sob a ótica da matéria e energia</strong>. Nossas pesquisas baseiam-se na premissa de que o "Fluido Cósmico Universal" descrito por pensadores clássicos encontra paralelos diretos nos estados exóticos da matéria estudados pela física contemporânea, como o Plasma e o Gás Fermiônico.
+                        </p>
+                        <p class="mb-6">
+                            Compreendemos o ser humano como um agregado complexo de níveis conscienciais e estruturas bioeletromagnéticas (Corpo Búdico, Mental, Astral e Etérico). A interação entre estes campos, modulada pela <span class="text-harvard-red font-semibold">Lei da Vibração</span> e pelos princípios da não-localidade quântica, define a saúde integral e a evolução da consciência.
+                        </p>
+                        <p>
+                            Utilizamos conceitos de <em>Morfopensenes</em> (formas-pensamento) como estruturas dinâmicas de energia com massa e frequência mensuráveis, capazes de influenciar a realidade material através do colapso da função de onda observado pelo "observador" — a mente humana.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 flex gap-4 text-sm font-semibold text-harvard-red">
+                        <span class="flex items-center gap-2"><i class="fas fa-atom"></i> Física Quântica</span>
+                        <span class="flex items-center gap-2"><i class="fas fa-brain"></i> Neuroteologia</span>
+                        <span class="flex items-center gap-2"><i class="fas fa-dna"></i> Epigenética</span>
+                    </div>
+                </div>
+
+                <div class="relative animate-on-scroll fade-in-up delay-200 group">
+                    <img 
+                        src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                        alt="Simulação de partículas subatômicas" 
+                        class="rounded-sm shadow-elegant w-full h-auto object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                    >
+                    <div class="absolute -bottom-8 -left-8 bg-white p-8 rounded-sm shadow-xl border-t-4 border-harvard-red max-w-xs z-20 hidden md:block">
+                        <p class="font-serif text-charcoal text-lg italic mb-2">"Tudo no universo é vibração."</p>
+                        <p class="text-royal-gold text-xs uppercase tracking-wide font-bold">— Princípio Hermético</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ecosystem" class="py-24 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-20 animate-on-scroll fade-in-up">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-gray-900 mb-6">Ecossistema Metadax</h2>
+                <div class="w-16 h-1 bg-royal-gold mx-auto mb-8"></div>
+                <p class="text-gray-600 max-w-3xl mx-auto text-lg">
+                    O Instituto de Estudos da Consciência (IEC) atua como o braço acadêmico de um conglomerado dedicado à evolução humana, integrando terapia, tecnologia e filantropia.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="group relative bg-paper p-10 rounded-sm hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-royal-gold/20 animate-on-scroll fade-in-up">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+                        <i class="fas fa-clinic-medical text-4xl text-royal-gold"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-harvard-red mb-2">IETBH</h3>
+                    <p class="text-xs text-gray-500 font-bold uppercase tracking-widest mb-6">Belo Horizonte, MG</p>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-6">
+                        O <strong>Instituto de Estudos e Terapias</strong> foca na aplicação clínica. Utiliza protocolos de Apometria Clínica e Bioenergia para tratamento de patologias psicossomáticas, atuando diretamente no reequilíbrio dos Corpos Sutis e chacras.
+                    </p>
+                    <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-royal-gold mr-2"></i>Terapias Integrativas</li>
+                        <li class="flex items-center"><i class="fas fa-check text-royal-gold mr-2"></i>Psicanálise Transpessoal</li>
+                    </ul>
+                </div>
+
+                <div class="group relative bg-harvard-red p-10 rounded-sm hover:shadow-2xl transition-all duration-500 transform md:-translate-y-4 animate-on-scroll fade-in-up delay-100">
+                    <div class="absolute top-0 right-0 p-4 opacity-20">
+                        <i class="fas fa-network-wired text-4xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">METADAX</h3>
+                    <p class="text-xs text-white/70 font-bold uppercase tracking-widest mb-6">São Paulo & Digital</p>
+                    <p class="text-white/90 text-sm leading-relaxed mb-6">
+                        O núcleo tecnológico do grupo. Desenvolvemos soluções para disseminação do Espiritualismo Universalista através de plataformas digitais, publicações editoriais e sistemas de gestão para templos e institutos.
+                    </p>
+                    <a href="#" class="inline-block text-royal-gold font-bold text-xs uppercase tracking-wider hover:text-white transition-colors">
+                        Conheça a Editora <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+
+                <div class="group relative bg-paper p-10 rounded-sm hover:shadow-2xl transition-all duration-500 border border-transparent hover:border-royal-gold/20 animate-on-scroll fade-in-up delay-200">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-100 transition-opacity">
+                        <i class="fas fa-dharmachakra text-4xl text-royal-gold"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-harvard-red mb-2">Templo Terra do Sol</h3>
+                    <p class="text-xs text-gray-500 font-bold uppercase tracking-widest mb-6">Núcleo Pai São Cipriano</p>
+                    <p class="text-gray-700 text-sm leading-relaxed mb-6">
+                        A base filosófica e prática. Um espaço sagrado universalista onde a ciência das religiões é vivenciada. Foca no estudo prático da mediunidade, ética universal e caridade moral e material.
+                    </p>
+                    <ul class="text-xs text-gray-500 space-y-2 mb-6">
+                        <li class="flex items-center"><i class="fas fa-check text-royal-gold mr-2"></i>Universalismo Crístico</li>
+                        <li class="flex items-center"><i class="fas fa-check text-royal-gold mr-2"></i>Estudos de Umbanda e Exoterismo</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-science text-white overflow-hidden relative">
+        <div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="animate-on-scroll fade-in-up">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold mb-6 text-white">Anatomia do Invisível</h2>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-8 text-justify">
+                        Nossos estudos mapeiam o ser humano muito além do soma biológico. Baseados em evidências de clarividência técnica e correlações com a mecânica de fluidos, estruturamos o ensino em torno da complexidade dos <strong>Sete Corpos</strong> e da <strong>Tela Búdica</strong>.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-full bg-royal-gold/20 flex items-center justify-center flex-shrink-0 text-royal-gold">
+                                <i class="fas fa-layer-group text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">Multidimensionalidade</h4>
+                                <p class="text-sm text-gray-400 mt-1">Análise dos corpos Atímico, Búdico, Mental Superior/Inferior, Astral e Duplo Etérico como camadas de densidade variável de energia.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="w-12 h-12 rounded-full bg-royal-gold/20 flex items-center justify-center flex-shrink-0 text-royal-gold">
+                                <i class="fas fa-infinity text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-xl font-bold text-white">Lei do Carma e Darma</h4>
+                                <p class="text-sm text-gray-400 mt-1">Entendimento da causalidade não como punição divina, mas como física pura: ação e reação em sistemas fechados de consciência.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white/5 p-8 rounded-sm backdrop-blur-md border border-white/10 text-center hover:bg-white/10 transition-colors">
+                        <span class="block text-4xl font-bold text-royal-gold mb-2">7</span>
+                        <span class="text-xs text-gray-300 uppercase tracking-widest">Níveis Conscienciais</span>
+                    </div>
+                    <div class="bg-white/5 p-8 rounded-sm backdrop-blur-md border border-white/10 text-center hover:bg-white/10 transition-colors">
+                        <span class="block text-4xl font-bold text-royal-gold mb-2">∞</span>
+                        <span class="text-xs text-gray-300 uppercase tracking-widest">Interconexão Universal</span>
+                    </div>
+                    <div class="col-span-2 bg-white/5 p-8 rounded-sm backdrop-blur-md border border-white/10 text-center hover:bg-white/10 transition-colors">
+                        <span class="block text-xl font-serif italic text-white mb-2">"Vós sois Deuses"</span>
+                        <span class="text-xs text-gray-300 uppercase tracking-widest">Princípio da Centelha Divina</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-paper">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-end mb-12">
+                <div class="max-w-2xl">
+                    <h2 class="text-3xl font-serif font-bold text-gray-900 mb-4">Instalações e Vivência</h2>
+                    <p class="text-gray-600">Um ambiente projetado para a elevação do pensamento e o rigor do estudo.</p>
+                </div>
+                <a href="#" class="hidden md:inline-flex items-center text-harvard-red font-bold uppercase text-xs tracking-widest hover:text-royal-gold transition-colors">
+                    Ver galeria completa <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[250px]">
+                <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden rounded-sm cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Conferência Acadêmica" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-8">
+                        <span class="text-royal-gold text-xs font-bold uppercase tracking-widest mb-2">Auditório Principal</span>
+                        <span class="text-white font-serif text-2xl">Simpósios de Conscienciologia</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-sm cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Estudo" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-harvard-red/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-serif italic text-lg">Pesquisa Individual</span>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-sm cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1581093458791-9f3c3900df4b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tecnologia" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-harvard-red/80 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <span class="text-white font-serif italic text-lg">Laboratórios Tech</span>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-2 relative group overflow-hidden rounded-sm cursor-pointer shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Networking" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+                         <span class="text-white font-serif italic text-lg">Networking & Filantropia</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-harvard-dark text-white pt-20 pb-10 border-t-4 border-royal-gold relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <img src="/assets/images/Group 1794.png" alt="Logo IEC" class="h-16 w-auto" onerror="this.style.display='none'">
+                        <div>
+                            <h3 class="font-serif font-bold text-2xl tracking-tighter">IEC</h3>
+                            <p class="text-[0.6rem] text-royal-gold uppercase tracking-[0.2em]">Metadax Group</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed text-justify">
+                        O Instituto de Estudos da Consciência é uma entidade filantrópica dedicada à expansão do conhecimento humano através da convergência entre ciência rigorosa e espiritualidade universalista.
+                    </p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6 border-b border-royal-gold/30 pb-2 inline-block">Institucional</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-royal-gold transition-colors">Manifesto Acadêmico</a></li>
+                        <li><a href="#" class="hover:text-royal-gold transition-colors">Corpo Docente & Pesquisadores</a></li>
+                        <li><a href="https://tetss.home.blog/estatuto/" target="_blank" class="hover:text-royal-gold transition-colors">Estatuto & Regimento</a></li>
+                        <li><a href="https://tetss.home.blog/etica/" target="_blank" class="hover:text-royal-gold transition-colors">Código de Ética Terapêutica</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6 border-b border-royal-gold/30 pb-2 inline-block">Contato & Unidades</h4>
+                    <ul class="space-y-4 text-sm text-gray-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-royal-gold"></i>
+                            <span><strong>Sede Administrativa</strong><br>Av. Paulista, 1106, Bela Vista<br>São Paulo/SP</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-royal-gold"></i>
+                            <span>contato@metadax.com.br</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fab fa-whatsapp text-royal-gold"></i>
+                            <span>+55 (11) 96136-0594</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-widest text-xs mb-6 border-b border-royal-gold/30 pb-2 inline-block">Newsletter Científica</h4>
+                    <p class="text-xs text-gray-500 mb-4">Receba atualizações sobre pesquisas em apometria e cursos.</p>
+                    <form class="flex flex-col gap-2">
+                        <input type="email" placeholder="E-mail acadêmico" class="bg-white/5 border border-white/10 text-white px-4 py-3 rounded-sm focus:outline-none focus:border-royal-gold text-sm placeholder-gray-600 transition-colors">
+                        <button class="bg-royal-gold text-harvard-dark font-bold py-3 rounded-sm hover:bg-white transition-colors text-xs uppercase tracking-widest">Inscrever-se</button>
+                    </form>
+                </div>
+            </div>
+
+            <hr class="border-white/5 mb-8">
+
+            <div class="flex flex-col md:flex-row justify-between items-center text-xs text-gray-600">
+                <p>&copy; 2025 IEC - Instituto de Estudos da Consciência. Parte do ecossistema Metadax. Todos os direitos reservados.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-royal-gold transition-colors"><i class="fab fa-linkedin fa-lg"></i></a>
+                    <a href="#" class="hover:text-royal-gold transition-colors"><i class="fab fa-instagram fa-lg"></i></a>
+                    <a href="#" class="hover:text-royal-gold transition-colors"><i class="fas fa-book fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Sticky Navbar Effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md', 'py-0');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Intersection Observer for Animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach((element) => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>
